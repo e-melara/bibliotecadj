@@ -3,8 +3,7 @@ from unipath import Path
 
 BASE_DIR = Path(__file__).ancestor(3)
 
-SECRET_KEY = "django-insecure-!0s5i(im^j*n*&9y3be+u#pevqqwmk49p=u)zgwc07#ds3yq$&"
-
+SECRET_KEY = '!0s5i(im^j*n*&9y3be+u#pevqqwmk49p=u)zgwc07#ds3yq$&'
 
 
 INSTALLED_APPS = [
@@ -14,6 +13,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # local apps
+    "applications.autor",
+    "applications.lector",
+    "applications.libro"
 ]
 
 MIDDLEWARE = [
@@ -50,18 +53,10 @@ WSGI_APPLICATION = 'biblioteca.wsgi.application'
 
 
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
+    {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
 ]
 
 LANGUAGE_CODE = 'en-us'
