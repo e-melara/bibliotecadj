@@ -1,0 +1,12 @@
+<h3>Listar autores</h3>
+<p>
+	<form method="get" autocomplete="off">
+		<input id="kword" name="kword" type="text" placeholder="Ingrese nombre" />
+		<button type="submit">Consultar</button>
+	</form>
+</p>
+<ul>
+	{% for autor in lista_autores  %}
+		<li>{{autor.nombre}} {{autor.apellidos}} - {{autor.nacionalidad}}</li>
+	{% endfor %}
+</ul>
