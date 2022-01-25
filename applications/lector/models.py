@@ -28,4 +28,4 @@ class Prestamo(models.Model):
     objects = PrestamoManager()
 
     def __str__(self):
-        return self.libro.titulo
+        return str(self.id) + " " + self.libro.titulo
