@@ -19,15 +19,15 @@ class AutorManager(models.Manager):
 
     def buscarExcludeYear(self, kword):
         return self.filter(
-            Q(nombre__icontains=kword) | 
+            Q(nombre__icontains=kword) |
             Q(apellidos__icontains=kword)
         ).exclude(
             Q(edad__icontains=20)
         )
-        
+
     def resultadoYearGt(self, kword):
         return self.filter(
+            nombre__icontains=kword,
             edad__gt=40,
             edad__lt=65
         ).order_by('apellidos', 'nombre')
-        

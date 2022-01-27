@@ -2,16 +2,12 @@ from django.db import models
 
 from .manager import PrestamoManager
 from applications.libro.models import Libro
+from applications.autor.models import Persona
 
 
-class Lector(models.Model):
-    nombres = models.CharField(max_length=50)
-    apellidos = models.CharField(max_length=50)
-    nacionalidad = models.CharField(max_length=50)
-    edad = models.PositiveIntegerField()
-
+class Lector(Persona):
     def __str__(self):
-        return str(self.id) + " - " + self.nombres + " " + self.apellidos
+        return str(self.id) + " - " + self.nombre + " " + self.apellidos
 
 
 class Prestamo(models.Model):

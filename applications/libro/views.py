@@ -26,6 +26,15 @@ class ListLibro2(ListView):
         return Libro.objects.listar_autor_categoria(3)
 
 
+class LibroTrgListView(ListView):
+    context_object_name = 'lista_libro'
+    template_name = "libros/lista.html"
+
+    def get_queryset(self):
+        palabra_clave = self.request.GET.get('kword', '')
+        return Libro.objects.listar_libros_trg(palabra_clave)
+
+
 class LibroDetailView(DetailView):
     model = Libro
     template_name = "libros/details.html"

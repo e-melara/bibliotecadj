@@ -1,3 +1,4 @@
+from tabnanny import verbose
 from django.db import models
 from applications.autor.models import Author
 
@@ -13,6 +14,11 @@ class Categoria(models.Model):
 
 
 class Libro(models.Model):
+    class Meta:
+        verbose_name = "Libro"
+        verbose_name_plural = "Libros"
+        ordering = ['titulo', 'fecha']
+    
     categoria = models.ForeignKey(
         Categoria,
         on_delete=models.CASCADE,

@@ -18,8 +18,4 @@ class PrestamoManager(models.Manager):
         ).annotate(
             num_prestados=Count('libro')
         )
-
-        for r in resultado:
-            print(r)
-
         return resultado

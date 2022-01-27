@@ -46,9 +46,9 @@ class Command(BaseCommand):
 
         # Libros
         # for _ in range(100):
-        #     c = random.randint(1, 12)
+        #     c = random.randint(37, 48)
         #     v = random.randint(1, 200)
-        #     a = random.randint(1, 12)
+        #     a = random.randint(1, 45)
 
         #     libro = Libro(
         #         categoria_id=c,
@@ -65,20 +65,20 @@ class Command(BaseCommand):
         # Lectores
         # for _ in range(25):
         #     Lector.objects.create(
-        #         nombres=fake.name(),
+        #         nombre=fake.name(),
         #         apellidos=fake.last_name(),
         #         nacionalidad=fake.city(),
         #         edad=random.randint(5, 90)
         #     )
 
         # Prestamos
-        # for _ in range(300):
-        #     lector = random.randint(1, 25)
-        #     libro = random.randint(104, 203)
+        for _ in range(300):
+            lector = random.randint(1, 50)
+            libro = random.randint(347, 358)
 
-        #     Prestamo.objects.create(
-        #         lector_id=lector,
-        #         libro_id=libro,
-        #         fecha_prestamo=fake.date(),
-        #         devuelto=random.randint(0, 1)
-        #     )
+            Prestamo.objects.create(
+                lector_id=lector,
+                libro_id=libro,
+                fecha_prestamo=fake.date(),
+                devuelto=random.randint(0, 1)
+            )

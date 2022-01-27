@@ -17,7 +17,8 @@ INSTALLED_APPS = [
     # local apps
     "applications.autor",
     "applications.lector",
-    "applications.libro"
+    "applications.libro",
+    "applications.home"
 ]
 
 MIDDLEWARE = [
